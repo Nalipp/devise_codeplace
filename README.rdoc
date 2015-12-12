@@ -23,6 +23,6 @@ $ touch .env<br>
 GMAIL_EMAIL=your_email<br>
 GMAIL_PASSWORD=your_password<br>
 
-add<br>
-.env<br>
-to .gitignore<br>
+add</br>
+.env</br>
+to .gitignore</br>
