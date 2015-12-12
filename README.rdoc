@@ -1,1 +1,30 @@
 Customize devise with www.codeplace.com
+
+Add to config/enbrionments/development.rb
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.delivery_method = :smtp
+
+Add to config/application.rb
+ActionMailer::Base.smtp_settings = {
+
+    :address        => 'smtp.gmail.com',
+    :domain         => 'mail.google.com',
+    :port           => 587,
+    :user_name      => ENV['GMAIL_EMAIL'],
+    :password       => ENV['GMAIL_PASSWORD'],
+    :authentication => :login,
+    :enable_starttls_auto => true
+
+}
+
+add
+gem 'dotenv-rails'
+$ bundle install
+
+$ touch .env
+GMAIL_EMAIL=your_email
+GMAIL_PASSWORD=your_password
+
+add
+.env
+to .gitignore
